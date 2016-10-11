@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    {% if include.title %}{{ include.title }}{% else %}{% include title.html %}{% endif %}
+    <div class="primaryContent{% if page.pageid %} primaryContent--{{ page.pageid }}{% endif %}">
+      {% if include.content %}{{ include.content }}{% else %}{{ content }}{% endif %}
+    </div>
+    {% include footer.html %}
+  </body>
+</html>

@@ -1,0 +1,23 @@
+- name: homepage
+  label: Home
+  url: /
+
+- name: about
+  label: About the Team
+  url: /about
+
+- name: members
+  label: Meet The Team
+  url: /team
+
+- name: cars
+  label: Our Cars
+  url: /our-cars
+
+- name: sponsors
+  label: Our Sponsors
+  url: /sponsors
+
+- name: blog
+  label: Blog
+  url: /blog

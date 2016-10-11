@@ -1,0 +1,216 @@
+@import 'components';
+
+html {
+    height: 100%;
+    position: relative;
+}
+
+body {
+    background: $background;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: 100;
+    color: $base-font-color;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    padding: 0 $standard-padding;
+}
+
+.globalHeader {
+    background: $bronco-brown;
+    line-height: $header-height;
+}
+
+.globalHeader__branding {
+    @extend .img;
+    background-image: url('../images/logo.png');
+    display: inline-block;
+    width: 166px;
+    height: $header-height;
+}
+
+.globalNavigation {
+    text-transform: uppercase;
+    line-height: 1em;
+
+    @extend .list-standard;
+
+    ul {
+        background: $bronco-brown;
+        width: 100%;
+        box-sizing: border-box;
+        display: none;
+        padding: 0 0 $standard-padding;
+
+        li {
+            margin: $standard-margin / 2 0 0;
+
+            &:first-of-type {
+                margin: 0;
+            }
+        }
+
+    }
+
+    a {
+        background-color: darken($bronco-brown, 5%);
+        color: $bronco-gold;
+        text-decoration: none;
+        display: block;
+        padding: $standard-padding / 2;
+    }
+}
+
+.globalNavigation__mobileMenuToggle {
+    background: lighten($bronco-brown, 5%);
+    color: $bronco-gold;
+    font-weight: 400;
+    line-height: 1em;
+    cursor: pointer;
+    position: absolute;
+    top: ($header-height / 2) - $standard-padding;
+    right: $standard-padding;
+    border: 1px solid $bronco-gold;
+    border-radius: 10px;
+    padding: $standard-padding / 2;
+}
+
+.primaryContent {
+    background: $white;
+    padding: $standard-padding 0;
+    min-height: 500px;
+}
+
+.globalFooter {
+    color: $white;
+    padding: 0 0 $standard-padding;
+    text-align: center;
+
+    h4 {
+        margin: 0;
+    }
+
+    a {
+        color: #999;
+    }
+}
+
+.globalFooter__socialMedia {
+    background-color: $black;
+    text-align: center;
+    padding: $standard-padding;
+    margin: 0 0 $standard-margin;
+
+    @extend .list-standard;
+}
+
+.globalFooter__socialMedia__link {
+    background-size: cover;
+    text-indent: -99999px;
+    margin: 0 $standard-margin 0 0 !important;
+    display: inline-block;
+
+    a {
+        display: block;
+    }
+
+    &, a {
+        width: 48px;
+        height: 48px;
+    }
+
+    &:last-of-type {
+        margin: 0;
+    }
+
+    &.globalFooter__socialMedia__link--facebook {
+        background-image: url('../images/social-icons/facebook.png');
+    }
+
+    &.globalFooter__socialMedia__link--flickr {
+        background-image: url('../images/social-icons/flickr.png');
+    }
+
+    &.globalFooter__socialMedia__link--twitter {
+        background-image: url('../images/social-icons/twitter.png');
+    }
+
+    &.globalFooter__socialMedia__link--github {
+        background-image: url('../images/social-icons/github.png');
+    }
+}
+
+.globalFooter__links {
+    @extend .list-standard;
+
+    margin: 0 0 $standard-margin;   
+}
+
+@include media-query(desktop) {
+    .wrapper {
+        width: $wrapper-width;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .globalNavigation {
+        float: right;
+        margin: 0;
+
+        ul {
+            background: transparent;
+            display: block;
+            padding: 0;
+            margin: 0;
+            width: auto;
+
+            li {
+                background: transparent;
+                display: inline;
+                margin: 0 0 0 $standard-margin;
+            }
+        }
+
+        a {
+            background: transparent;
+            font-weight: 100;
+            line-height: $header-height;
+            padding: 0;
+            display: inline;
+
+            &.active,
+            &:hover {
+                text-decoration: underline;
+                transition: .2s;
+            }
+        }
+    }
+
+    .globalNavigation__mobileMenuToggle {
+        display: none;
+    }
+    
+    .globalFooter {
+        text-align: left;
+    }
+
+    .globalFooter__links,
+    .globalFooter__thankYou {
+        width: 300px;
+    }
+
+    .globalFooter__links {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+    }
+
+    .globalFooter__thankYou {
+        float: right;
+    }
+}

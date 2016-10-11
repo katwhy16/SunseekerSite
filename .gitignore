@@ -1,0 +1,11 @@
+.DS_Store
+.sass-cache
+.jekyll-metadata
+
+sunseeker.*
+Gemfile.lock
+
+/_site
+/_js/lib/*/
+/js
+/node_modules
